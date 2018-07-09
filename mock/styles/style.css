@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Markazi+Text|Raleway|Roboto");
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'Raleway', sans-serif;
+  overflow: hidden; }
+
+.container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  text-align: center;
+  padding: 0 1rem;
+  overflow: hidden; }
+
+#title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 400; }
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.button-container {
+  margin-bottom: 1.5rem; }
+  .button-container button {
+    background-color: unset;
+    border: 1px solid #ffcab6;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    font-size: 1.3rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+    transition: 0.1s; }
+    @media screen and (min-width: 500px) {
+      .button-container button {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 1rem; } }
+    .button-container button:hover {
+      border: 1px solid #ffa483;
+      color: coral;
+      cursor: pointer; }
+
+#generation {
+  font-size: 1.3rem;
+  color: coral;
+  margin-bottom: 1.5rem; }
+
+#canvas-container {
+  overflow: hidden;
+  margin-bottom: 1.5rem; }
+
+#attribution p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem; }
+  #attribution p#code-repository {
+    font-size: 1rem; }
+  #attribution p a {
+    text-decoration: none;
+    color: coral; }
+
+/*# sourceMappingURL=style.css.map */
