@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Generation correctly 1`] = `
+<div
+  id="generation"
+>
+  Generation: 
+  <span
+    id="generation-number"
+  >
+    0
+  </span>
+</div>
+`;
