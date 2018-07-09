@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Title from './components/Title';
+import Generation from './components/Generation';
+import Attribution from './components/Attribution';
 
 import './App.css';
 
@@ -9,6 +11,12 @@ class App extends Component {
     return (
       <div>
         <Title title="Game Of Life" />
+        <Generation />
+        <Attribution
+          authorName="Spyros Argalias"
+          authorUrl="https://sargalias.com"
+          codeRepositoryUrl="https://github.com/sargalias/game-of-life"
+        />
       </div>
     );
   }
