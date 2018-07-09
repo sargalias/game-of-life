@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Buttons correctly 1`] = `
+<div>
+  <Button
+    text="Run"
+  />
+  <Button
+    text="Stop"
+  />
+  <Button
+    text="Clear"
+  />
+  <Button
+    text="Reset"
+  />
+</div>
+`;
