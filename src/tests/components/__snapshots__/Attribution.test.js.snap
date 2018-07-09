@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Attribution should render correctly 1`] = `
+<div
+  id="attribution"
+>
+  <p
+    id="author"
+  >
+    By 
+    <a
+      href="https://test.com"
+      target="_blank"
+    >
+      testName
+    </a>
+  </p>
+  <p
+    id="code-repository"
+  >
+    View code on 
+    <a
+      href="https://test-code.com"
+      target="_blank"
+    >
+      GitHub
+    </a>
+  </p>
+</div>
+`;
