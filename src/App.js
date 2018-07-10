@@ -10,6 +10,10 @@ import './App.css';
 
 
 class App extends Component {
+  state = {
+    generation: 0
+  };
+
   render() {
     return (
       <Container>
