@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Container from './components/Container';
 import Title from './components/Title';
 import Generation from './components/Generation';
 import Canvas from './components/Canvas';
@@ -11,7 +12,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div>
+      <Container>
         <Title title="Game Of Life" />
         <Generation />
         <Canvas />
@@ -21,7 +22,7 @@ class App extends Component {
           authorUrl="https://sargalias.com"
           codeRepositoryUrl="https://github.com/sargalias/game-of-life"
         />
-      </div>
+      </Container>
     );
   }
 }

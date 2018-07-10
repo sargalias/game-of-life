@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render container correctly with child components 1`] = `
+<div
+  className="container"
+>
+  <PlainComponent />
+  <ClassnameComponent />
+</div>
+`;
