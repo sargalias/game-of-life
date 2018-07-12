@@ -1,3 +1,5 @@
+import Square from './Square';
+
 
 class BoardCalculator {
   constructor(board) {
@@ -5,23 +7,23 @@ class BoardCalculator {
   }
 
   getNeighbours = (square) => {
-    let numNeighbours = 0;
+    let neighbours = [];
     let [rootX, rootY] = square.getXY();
     for (let x=rootX-1; x<=rootX+1; x++) {
       for (let y=rootY-1; y<=rootY+1; y++) {
-        if (x !== rootX && y !== rootY) { // different square to the one we're comparing against
-          if (this.board.get(new Square(x, y))) {
-            numNeighbours++;
+        if (x !== rootX || y !== rootY) { // different square to the one we're comparing against
+          const currentSquare = new Square(x, y);
+          if (this.board.get(currentSquare)) {
+            neighbours.push(currentSquare);
           }
-
         }
       }
     }
-    return numNeighbours;
+    return neighbours;
   };
 
   numNeighbours = (square) => {
-    return null;
+    return this.getNeighbours(square).length;
   };
 }
 
