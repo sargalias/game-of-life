@@ -1,42 +1,32 @@
 
-
 class Board {
-  // [x, y] to "x,y"
-  constructor(coordsList=[]) {
-    this.board = {};
+  constructor(squares=[]) {
+    this.squares = squares.slice();
   }
 
-  _convertBoardCoordsToXY = (boardCoords) => {
-    // '5,5' => [5, 5];
-    return boardCoords.split(',').map((el) => parseInt(el));
-  };
-
-  _convertXYtoBoardCoords = (x, y) => {
-    return `${x},${y}`;
-  };
-
   getAll = () => {
-    const xyCoordsList = [];
-    for (const boardCoords in this.board) {
-      const xyCoords = this._convertBoardCoordsToXY(boardCoords);
-      xyCoordsList.push(xyCoords);
+    return this.squares.slice();
+  };
+
+  exists = (newSquare) => {
+    for (let square of this.squares) {
+      if (newSquare.equals(square))
+        return true;
     }
-    return xyCoordsList;
+    return false;
   };
 
-  exists = (x, y) => {
-    const boardCoords = this._convertXYtoBoardCoords(x, y);
-    return Boolean(this.board[boardCoords]);
+  add = (newSquare) => {
+    if (this.exists(newSquare))
+      return false;
+    this.squares.push(newSquare);
+    return true;
   };
 
-  add = (x, y) => {
-    const boardCoords = this._convertXYtoBoardCoords(x, y);
-    this.board[boardCoords] = true;
-  };
-
-  remove = (x, y) => {
-    const boardCoords = this._convertXYtoBoardCoords(x, y);
-    delete this.board[boardCoords];
+  remove = (squareToRemove) => {
+    this.squares = this.squares.filter((square) => {
+      return !square.equals(squareToRemove);
+    });
   };
 }
 
