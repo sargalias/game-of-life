@@ -6,6 +6,9 @@ import Canvas from './components/Canvas';
 import Buttons from './components/Buttons';
 import Attribution from './components/Attribution';
 
+import Board from './logic/Board';
+import Drawer from './logic/Drawer';
+
 import './App.css';
 
 
@@ -30,5 +33,14 @@ class App extends Component {
     );
   }
 }
+
+const board = new Board();
+board.add(0, 0);
+board.add(1, 0);
+board.add(2, 0);
+board.add(1, 3);
+board.add(1, 4);
+
+new Drawer().draw(board);
 
 export default App;

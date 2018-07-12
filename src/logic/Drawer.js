@@ -1,3 +1,4 @@
+import Konva from 'konva';
 
 class Drawer {
   constructor(width=700,
@@ -63,10 +64,50 @@ class Drawer {
     return this.borderColor;
   };
 
+  _createBackgroundLayer = () => {
+    const bgLayer = new Konva.Layer();
+    const bgRect = new Konva.Rect({
+      x: 0,
+      y: 0,
+      width: this.width,
+      height: this.height,
+      fill: this.backgroundColor
+    });
+    bgLayer.add(bgRect);
+    return bgLayer;
+  };
+
+  _calculateDrawPosition = (num) => {
+    return num * this.step;
+  };
+
+  _createPrimaryLayer = (board) => {
+    const layer = new Konva.Layer();
+    board.getAll().forEach(([x, y]) => {
+      const rect = new Konva.Rect({
+        x: this._calculateDrawPosition(x),
+        y: this._calculateDrawPosition(y),
+        width: this.step,
+        height: this.step,
+        fill: this.primaryColor,
+        stroke: this.borderColor,
+        strokeWidth: 1
+      });
+      layer.add(rect);
+    });
+    return layer;
+  };
+
   draw = (board) => {
-    // fill board with background-color
-    // for every square, calculate top-left. Then fill rectangle step by step with primaryColor.
-    // then fill lines with border color.
+    const stage = new Konva.Stage({
+      container: 'my-canvas',
+      width: this.width,
+      height: this.height
+    });
+    const bgLayer = this._createBackgroundLayer();
+    const primaryLayer = this._createPrimaryLayer(board);
+    stage.add(bgLayer);
+    stage.add(primaryLayer);
   };
 }
 
