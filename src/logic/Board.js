@@ -1,5 +1,6 @@
 
 class Board {
+  // make Board work with a map of keys of 'x,y' for faster lookup
   constructor(squares=[]) {
     this.squares = squares.slice();
   }
