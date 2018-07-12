@@ -28,3 +28,10 @@ test('square equals works correctly', () => {
   expect(square1.equals(square2)).toBe(false);
   expect(square1.equals(square3)).toBe(true);
 });
+
+test('square setValue and getValue work correctly', () => {
+  const square1 = new Square(5, 7);
+  expect(square1.getValue()).toBe(true); // default
+  square1.setValue(1);
+  expect(square1.getValue()).toBe(1);
+});

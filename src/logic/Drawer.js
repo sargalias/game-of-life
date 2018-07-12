@@ -83,7 +83,8 @@ class Drawer {
 
   _createPrimaryLayer = (board) => {
     const layer = new Konva.Layer();
-    board.getAll().forEach(([x, y]) => {
+    board.getAll().forEach((square) => {
+      const [x, y] = square.getXY();
       const rect = new Konva.Rect({
         x: this._calculateDrawPosition(x),
         y: this._calculateDrawPosition(y),

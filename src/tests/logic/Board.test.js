@@ -78,3 +78,12 @@ test('removing one of many items should work correctly', () => {
   board.remove(square1);
   expect(board.getAll()).toEqual([square2]);
 });
+
+test('get works correctly', () => {
+  const square1 = new Square(0, 0);
+  const square2 = new Square(2, 1);
+  const square3 = new Square(2, 2);
+  board = new Board([square1, square2]);
+  expect(board.get(square1).equals(square1)).toBe(true);
+  expect(board.get(square3)).toBe(null);
+});

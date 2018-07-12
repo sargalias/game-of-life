@@ -1,9 +1,10 @@
 
 
 class Square {
-  constructor(x, y) {
+  constructor(x, y, value=true) {
     this.x = x;
     this.y = y;
+    this.value = value;
   }
 
   getX = () => {
@@ -20,6 +21,14 @@ class Square {
 
   equals = (other) => {
     return this.x === other.x && this.y === other.y;
+  };
+
+  setValue = (value) => {
+    this.value = value;
+  };
+
+  getValue = () => {
+    return this.value;
   };
 }
 

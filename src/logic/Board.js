@@ -9,11 +9,7 @@ class Board {
   };
 
   exists = (newSquare) => {
-    for (let square of this.squares) {
-      if (newSquare.equals(square))
-        return true;
-    }
-    return false;
+    return Boolean(this.get(newSquare));
   };
 
   add = (newSquare) => {
@@ -27,6 +23,14 @@ class Board {
     this.squares = this.squares.filter((square) => {
       return !square.equals(squareToRemove);
     });
+  };
+
+  get = (squareToGet) => {
+    for (let square of this.squares) {
+      if (squareToGet.equals(square))
+        return square;
+    }
+    return null;
   };
 }
 

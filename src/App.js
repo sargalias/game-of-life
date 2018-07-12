@@ -7,6 +7,7 @@ import Buttons from './components/Buttons';
 import Attribution from './components/Attribution';
 
 import Board from './logic/Board';
+import Square from './logic/Square';
 import Drawer from './logic/Drawer';
 
 import './App.css';
@@ -35,11 +36,12 @@ class App extends Component {
 }
 
 const board = new Board();
-board.add(0, 0);
-board.add(1, 0);
-board.add(2, 0);
-board.add(1, 3);
-board.add(1, 4);
+for (let i=0; i<5; i++) {
+  for (let j=0; j<5; j+=2) {
+    board.add(new Square(i, j));
+  }
+}
+
 
 new Drawer().draw(board);
 
