@@ -2,15 +2,25 @@
 class Board {
   // make Board work with a map of keys of 'x,y' for faster lookup
   constructor(squares=[]) {
-    this.squares = squares.slice();
-  }
-
-  getAll = () => {
-    return this.squares.slice();
+    // this.squares = squares.slice();
+    this.squares = {};
+    squares.forEach((square) => this.add(square));
   };
 
-  exists = (newSquare) => {
-    return Boolean(this.get(newSquare));
+  _convertBoardCoordsToXY = (boardCoords) => {
+    return boardCoords.split(',').map((val) => parseInt(val));
+  };
+
+  _convertXYToBoardCoords = (x, y) => {
+    return `${x},${y}`;
+  };
+
+  getAll = () => {
+    return Object.values(this.squares);
+  };
+
+  exists = (square) => {
+    return Boolean(this.get(square));
   };
 
   _addArray = (squareArr) => {
@@ -18,9 +28,11 @@ class Board {
   };
 
   _addSquare = (square) => {
-    if (this.exists(square))
+    const [x, y] = square.getXY();
+    const boardCoords = this._convertXYToBoardCoords(x, y);
+    if (this.squares[boardCoords])
       return false;
-    this.squares.push(square);
+    this.squares[boardCoords] = square;
     return true;
   };
 
@@ -32,16 +44,15 @@ class Board {
   };
 
   remove = (squareToRemove) => {
-    this.squares = this.squares.filter((square) => {
-      return !square.equals(squareToRemove);
-    });
+    const boardCoords = this._convertXYToBoardCoords(...squareToRemove.getXY());
+    delete this.squares[boardCoords];
   };
 
   get = (squareToGet) => {
-    for (let square of this.squares) {
-      if (squareToGet.equals(square))
-        return square;
-    }
+    const boardCoords = this._convertXYToBoardCoords(...squareToGet.getXY());
+    const square = this.squares[boardCoords];
+    if (square)
+      return square;
     return null;
   };
 }
