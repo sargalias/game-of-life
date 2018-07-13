@@ -1,6 +1,5 @@
 import Board from '../../logic/Board';
 import Square from '../../logic/Square';
-import { xyCoordsList, boardCoordsList } from "../fixtures/boardData";
 
 let board;
 
@@ -35,6 +34,13 @@ test('should add items correctly', () => {
   board.add(square1);
   expect(board.getAll()).toEqual([square1]);
   board.add(square2);
+  expect(board.getAll()).toEqual([square1, square2]);
+});
+
+test('should add multiple items correctly', () => {
+  const square1 = new Square(0, 0);
+  const square2 = new Square(1, 1);
+  board.add([square1, square2]);
   expect(board.getAll()).toEqual([square1, square2]);
 });
 

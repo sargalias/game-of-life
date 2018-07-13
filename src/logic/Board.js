@@ -13,11 +13,22 @@ class Board {
     return Boolean(this.get(newSquare));
   };
 
-  add = (newSquare) => {
-    if (this.exists(newSquare))
+  _addArray = (squareArr) => {
+    squareArr.forEach((square) => this._addSquare(square));
+  };
+
+  _addSquare = (square) => {
+    if (this.exists(square))
       return false;
-    this.squares.push(newSquare);
+    this.squares.push(square);
     return true;
+  };
+
+  add = (val) => {
+    if (Array.isArray(val))
+      this._addArray(val);
+    else
+      this._addSquare(val);
   };
 
   remove = (squareToRemove) => {
