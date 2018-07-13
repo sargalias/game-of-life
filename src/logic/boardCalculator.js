@@ -36,7 +36,7 @@ export const getNeighbours = (board, square) => {
   return neighbours;
 };
 
-export const numNeighbours = (board, square) => {
+export const getNumNeighbours = (board, square) => {
   return getNeighbours(board, square).length;
 };
 

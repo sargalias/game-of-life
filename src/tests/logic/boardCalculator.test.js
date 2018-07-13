@@ -2,13 +2,13 @@ import {
   getAllSquaresWithNeighbours,
   getAdjacentSquares,
   getNeighbours,
-  numNeighbours
+  getNumNeighbours
 } from '../../logic/boardCalculator';
 import Board from '../../logic/Board';
 import Square from '../../logic/Square';
 
 
-test('numNeighbours works correctly with 8 neighbours', () => {
+test('getNumNeighbours works correctly with 8 neighbours', () => {
   const board = new Board();
   for (let x=0; x<3; x++) {
     for (let y=0; y<3; y++) {
@@ -16,21 +16,21 @@ test('numNeighbours works correctly with 8 neighbours', () => {
     }
   }
   const square = new Square(1, 1);
-  expect(numNeighbours(board, square)).toBe(8);
+  expect(getNumNeighbours(board, square)).toBe(8);
 });
 
-test('numNeighbours works correctly with 0 squares', () => {
+test('getNumNeighbours works correctly with 0 squares', () => {
   const board = new Board();
   const square = new Square(1, 1);
-  expect(numNeighbours(board, square)).toBe(0);
+  expect(getNumNeighbours(board, square)).toBe(0);
 });
 
-test('numNeighbours works correctly with 1 neighbour', () => {
+test('getNumNeighbours works correctly with 1 neighbour', () => {
   const board = new Board();
   board.add(new Square(1, 0));
   board.add(new Square(5, 5));
   const square = new Square(2, 1);
-  expect(numNeighbours(board, square)).toBe(1);
+  expect(getNumNeighbours(board, square)).toBe(1);
 });
 
 test('getNeighbours works correctly with 8 neighbours', () => {

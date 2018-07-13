@@ -31,7 +31,7 @@ test('square equals works correctly', () => {
 
 test('square setValue and getValue work correctly', () => {
   const square1 = new Square(5, 7);
-  expect(square1.getValue()).toBe(true); // default
+  expect(square1.getValue()).toBe(0); // default
   square1.setValue(1);
   expect(square1.getValue()).toBe(1);
 });

@@ -1,5 +1,5 @@
 import Board from './board';
-import BoardCalculator from './BoardCalculator';
+import { getAllSquaresWithNeighbours, getNumNeighbours } from "./boardCalculator";
 
 
 class GameOfLifeRules {
@@ -10,21 +10,24 @@ class GameOfLifeRules {
     // If the square is empty, it springs to life with 3 neighbours.
     // If the square is alive, it stays alive with 2 or 3 neighbours, otherwise dies.
     const newBoard = new Board();
-    const relevantSquares = boardCalculator.getAllSquaresWithNeighbours();
+    const relevantSquares = getAllSquaresWithNeighbours(board);
     relevantSquares.forEach((square) => {
-      this._handleSquare(square);
+      this._handleSquare(square, board, newBoard);
     });
     return newBoard;
   };
 
   _handleSquare = (square, board, newBoard) => {
-    const numNeighbours = boardCalculator.numNeighbours(square);
-    if (square.isAlive() && numNeighbours === 2 || numNeighbours === 3) {
-      if (numNeighbours === 2 || numNeighbours === 3)
-        newBoard.push(square);
+    const numNeighbours = getNumNeighbours(board, square);
+    if (square.getValue() === 0) {
+      if (numNeighbours === 3) {
+        square.setValue(1);
+        newBoard.add(square);
+      }
     } else {
-      if (numNeighbours === 3)
-        newBoard.push(square);
+      if (numNeighbours === 2 || numNeighbours === 3) {
+        newBoard.add(square);
+      }
     }
   };
 }

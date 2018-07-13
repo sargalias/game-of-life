@@ -1,7 +1,7 @@
 
 
 class Square {
-  constructor(x, y, value=true) {
+  constructor(x, y, value=0) {
     this.x = x;
     this.y = y;
     this.value = value;
