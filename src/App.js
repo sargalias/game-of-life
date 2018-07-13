@@ -6,12 +6,29 @@ import Canvas from './components/Canvas';
 import Buttons from './components/Buttons';
 import Attribution from './components/Attribution';
 
-import Board from './logic/Board';
-import Square from './logic/Square';
-import Drawer from './logic/Drawer';
-
 import './App.css';
 
+import Board from './logic/Board';
+import Rules from './logic/GameOfLifeRules';
+import Drawer from './logic/Drawer';
+import Square from './logic/Square';
+
+const squares = [];
+for (let x=0; x<500; x++) {
+  for (let y=0; y<500; y++) {
+    if (Math.random() < 0.05) {
+      squares.push(new Square(x, y));
+    }
+  }
+}
+let board = new Board(squares);
+const rules = new Rules();
+const drawer = new Drawer();
+drawer.draw(board);
+// setInterval(() => {
+//   board = rules.run(board);
+//   drawer.draw(board);
+// }, 500);
 
 class App extends Component {
   state = {
@@ -35,14 +52,5 @@ class App extends Component {
   }
 }
 
-const board = new Board();
-for (let i=0; i<5; i++) {
-  for (let j=0; j<5; j+=2) {
-    board.add(new Square(i, j));
-  }
-}
-
-
-new Drawer().draw(board);
 
 export default App;
