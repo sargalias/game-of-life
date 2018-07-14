@@ -16,7 +16,8 @@ class App extends Component {
     generation: 0,
     boardData: [],
     timer: null,
-    isRunning: this.props.isRunning
+    isRunning: this.props.isRunning,
+    interval: this.props.interval
   };
 
   componentDidMount() {
@@ -35,7 +36,7 @@ class App extends Component {
     this.setState((prevState) => {
       if (prevState.timer)
         return {};
-      const timer = setInterval(this.update, this.props.interval);
+      const timer = setInterval(this.update, this.state.interval);
       return {
         timer,
         isRunning: true
@@ -65,6 +66,22 @@ class App extends Component {
       boardData
     }));
     if (this.props.isRunning)
+      this.run();
+  };
+
+  convertIntervalFrequency = (val) => {
+    return 1000 / val
+  };
+
+  onIntervalChange = (e) => {
+    const isRunning = this.state.isRunning;
+    this.pause();
+    const frequency = parseInt(e.target.value);
+    const interval = this.convertIntervalFrequency(frequency);
+    this.setState(() => ({
+      interval
+    }));
+    if (isRunning)
       this.run();
   };
 
@@ -99,11 +116,11 @@ class App extends Component {
           ) : (
             <Button text="Run" onClick={this.run} />
           )}
-          <Button text="Step" onClick={this.step} />
+          <Button text="Step" onClick={this.update} />
           <Button text="Clear" onClick={this.clear} />
           <Button text="Reset" onClick={this.reset} />
         </div>
-        <Slider />
+        <Slider value={`${this.convertIntervalFrequency(this.state.interval)}`} onChange={this.onIntervalChange} />
         <Board boardData={this.state.boardData} onCellClick={this.handleCellClick} />
         <Attribution
           authorName="Spyros Argalias"

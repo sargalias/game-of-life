@@ -15,7 +15,7 @@ exports[`Slider should render correctly 1`] = `
     Min
     <input
       max="50"
-      min="1"
+      min="2"
       name="speed"
       type="range"
     />

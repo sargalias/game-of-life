@@ -10,7 +10,7 @@ const Slider = ({value, onChange}) => (
       <input
         name="speed"
         type="range"
-        min="1"
+        min="2"
         max="50"
         value={value}
         onChange={onChange}

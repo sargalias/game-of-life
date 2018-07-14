@@ -4,7 +4,15 @@ import App from '../App';
 
 
 test('app renders correctly', () => {
-  const wrapper = shallow(<App chance={0} rows={30} cols={50} isRunning={false} onCellClick={() => {}} />);
+  const wrapper = shallow(<App
+    chance={0}
+    rows={30}
+    cols={50}
+    isRunning={false}
+    value={"80"}
+    onCellClick={() => {}}
+    onChange={() => {}}
+  />);
   expect(wrapper).toMatchSnapshot();
 });
 
@@ -39,6 +47,11 @@ test('app state.isRunning is correct upon mounting', () => {
 
   const wrapper2 = shallow(<App chance={0} rows={10} cols={10} isRunning={true} />);
   expect(wrapper2.state('isRunning')).toBe(true);
+});
+
+test('app state.interval is correct upon mounting', () => {
+  const wrapper = shallow(<App chance={0} rows={10} cols={10} isRunning={false} interval={50} />);
+  expect(wrapper.state('interval')).toBe(50);
 });
 
 test('update works correctly', () => {
@@ -140,4 +153,34 @@ test('handleCellClick works correctly 2', () => {
     [0, 1],
     [0, 0]
   ]);
+});
+
+test('changeInterval should work correctly when not running', () => {
+  const frequency = 20;
+  const interval = 1000 / frequency;
+  const wrapper = shallow(<App chance={0} rows={3} cols={2} isRunning={false} interval={50} />);
+  const event = {
+    target: {
+      value: frequency
+    }
+  };
+  wrapper.instance().onIntervalChange(event);
+  expect(wrapper.state('interval')).toBe(interval);
+  expect(wrapper.state('isRunning')).toBe(false);
+});
+
+test('changeInterval should work correctly when running', () => {
+  const frequency = 20;
+  const interval = 1000 / frequency;
+  const wrapper = shallow(<App chance={0} rows={3} cols={2} isRunning={true} interval={50} />);
+  const event = {
+    target: {
+      value: frequency
+    }
+  };
+  const initialTimer = wrapper.state('timer');
+  wrapper.instance().onIntervalChange(event);
+  expect(wrapper.state('interval')).toBe(interval);
+  expect(wrapper.state('isRunning')).toBe(true);
+  expect(wrapper.state('timer')).not.toBe(initialTimer);
 });
