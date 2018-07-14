@@ -4,7 +4,7 @@ import Button from './Button';
 const Buttons = (props) => (
   <div className="button-container">
     <Button text="Run" onClick={props.onRunClick} />
-    <Button text="Stop" onClick={props.onPauseClick} />
+    <Button text="Pause" onClick={props.onPauseClick} />
     <Button text="Clear" onClick={props.onClearClick} />
     <Button text="Reset" onClick={props.onResetClick} />
   </div>
