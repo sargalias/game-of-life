@@ -98,6 +98,7 @@ class App extends Component {
           ) : (
             <Button text="Run" onClick={this.run} />
           )}
+          <Button text="Step" onClick={this.step} />
           <Button text="Clear" onClick={this.clear} />
           <Button text="Reset" onClick={this.reset} />
         </div>
