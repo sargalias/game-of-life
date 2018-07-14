@@ -12,3 +12,10 @@ test('should contain text passed in props', () => {
   const wrapper = shallow(<Button text={text} />);
   expect(wrapper.text()).toBe(text);
 });
+
+test('should have onClick attribute with value of prop.onClick', () => {
+  const mock = jest.fn();
+  const wrapper = shallow(<Button onClick={mock} />);
+  wrapper.simulate('click');
+  expect(mock).toHaveBeenCalledTimes(1);
+});
