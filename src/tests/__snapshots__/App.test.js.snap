@@ -18,6 +18,9 @@ exports[`app renders correctly 1`] = `
       text="Run"
     />
     <Button
+      text="Step"
+    />
+    <Button
       onClick={[Function]}
       text="Clear"
     />
@@ -26,6 +29,7 @@ exports[`app renders correctly 1`] = `
       text="Reset"
     />
   </div>
+  <Slider />
   <Board
     boardData={
       Array [

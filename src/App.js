@@ -103,8 +103,8 @@ class App extends Component {
           <Button text="Clear" onClick={this.clear} />
           <Button text="Reset" onClick={this.reset} />
         </div>
-        <Board boardData={this.state.boardData} onCellClick={this.handleCellClick} />
         <Slider />
+        <Board boardData={this.state.boardData} onCellClick={this.handleCellClick} />
         <Attribution
           authorName="Spyros Argalias"
           authorUrl="https://sargalias.com"

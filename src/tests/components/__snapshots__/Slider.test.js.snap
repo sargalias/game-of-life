@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider should render correctly 1`] = `
+<div
+  className="slider"
+>
+  <div>
+    <label
+      htmlFor="speed"
+    >
+      Step speed
+    </label>
+  </div>
+  <div>
+    Min
+    <input
+      max="50"
+      min="1"
+      name="speed"
+      type="range"
+    />
+    Max
+  </div>
+</div>
+`;
