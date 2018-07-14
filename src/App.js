@@ -6,6 +6,7 @@ import Attribution from './components/Attribution';
 import Board from './components/Board';
 import {generateRandomBoard} from './logic/generateBoard';
 import rules from './logic/rules';
+import Slider from './components/Slider';
 
 import './App.css';
 
@@ -103,6 +104,7 @@ class App extends Component {
           <Button text="Reset" onClick={this.reset} />
         </div>
         <Board boardData={this.state.boardData} onCellClick={this.handleCellClick} />
+        <Slider />
         <Attribution
           authorName="Spyros Argalias"
           authorUrl="https://sargalias.com"
