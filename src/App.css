@@ -1,13 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Lato");
 * {
   margin: 0;
   padding: 0; }
 
 body {
-  font-family: 'Raleway', sans-serif;
-  -webkit-font-feature-settings: "lnum";
-  -moz-font-feature-settings: "lnum";
-  font-variant-numeric: normal;
+  font-family: 'Lato', sans-serif;
   overflow: hidden; }
 
 .container {
