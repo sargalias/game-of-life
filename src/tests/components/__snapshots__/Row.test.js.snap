@@ -7,24 +7,28 @@ exports[`row should render correctly 1`] = `
   <Cell
     colId={0}
     key="0"
+    onCellClick={[Function]}
     rowId={5}
     value={0}
   />
   <Cell
     colId={1}
     key="1"
+    onCellClick={[Function]}
     rowId={5}
     value={0}
   />
   <Cell
     colId={2}
     key="2"
+    onCellClick={[Function]}
     rowId={5}
     value={1}
   />
   <Cell
     colId={3}
     key="3"
+    onCellClick={[Function]}
     rowId={5}
     value={1}
   />

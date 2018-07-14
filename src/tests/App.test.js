@@ -4,7 +4,7 @@ import App from '../App';
 
 
 test('app renders correctly', () => {
-  const wrapper = shallow(<App chance={0} rows={30} cols={50} running={false} />);
+  const wrapper = shallow(<App chance={0} rows={30} cols={50} running={false} onCellClick={() => {}} />);
   expect(wrapper).toMatchSnapshot();
 });
 
@@ -118,4 +118,26 @@ test('reset works correctly', () => {
   const state = wrapper.state();
   expect(state.boardData).toEqual([[1, 1], [1, 1]]);
   expect(state.generation).toBe(0);
+});
+
+test('handleCellClick works correctly 1', () => {
+  const wrapper = shallow(<App chance={1} rows={3} cols={2} running={false}/>);
+  wrapper.instance().handleCellClick(0, 0);
+  wrapper.instance().handleCellClick(1, 1);
+  expect(wrapper.state('boardData')).toEqual([
+    [0, 1],
+    [1, 0],
+    [1, 1]
+  ]);
+});
+
+test('handleCellClick works correctly 2', () => {
+  const wrapper = shallow(<App chance={0} rows={3} cols={2} running={false} />);
+  wrapper.instance().handleCellClick(0, 0);
+  wrapper.instance().handleCellClick(1, 1);
+  expect(wrapper.state('boardData')).toEqual([
+    [1, 0],
+    [0, 1],
+    [0, 0]
+  ]);
 });

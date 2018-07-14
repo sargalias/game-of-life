@@ -6,7 +6,13 @@ const Row = (props) => (
     className="row"
   >
     {props.rowData.map((cell, index) => (
-      <Cell key={index} rowId={props.rowId} colId={index} value={cell} />
+      <Cell
+        key={index}
+        rowId={props.rowId}
+        colId={index}
+        value={cell}
+        onCellClick={props.onCellClick}
+      />
     ))}
   </div>
 );

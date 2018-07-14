@@ -1579,6 +1579,7 @@ exports[`app renders correctly 1`] = `
         ],
       ]
     }
+    onCellClick={[Function]}
   />
   <Attribution
     authorName="Spyros Argalias"

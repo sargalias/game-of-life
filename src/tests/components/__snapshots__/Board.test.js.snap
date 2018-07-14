@@ -6,6 +6,7 @@ exports[`board should render correctly with boardData 1`] = `
 >
   <Row
     key="0"
+    onCellClick={[Function]}
     rowData={
       Array [
         0,
@@ -17,6 +18,7 @@ exports[`board should render correctly with boardData 1`] = `
   />
   <Row
     key="1"
+    onCellClick={[Function]}
     rowData={
       Array [
         1,
@@ -28,6 +30,7 @@ exports[`board should render correctly with boardData 1`] = `
   />
   <Row
     key="2"
+    onCellClick={[Function]}
     rowData={
       Array [
         0,
