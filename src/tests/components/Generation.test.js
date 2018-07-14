@@ -12,3 +12,9 @@ test('Generation should contain correct initial text', () => {
   const wrapper = shallow(<Generation />);
   expect(wrapper.text()).toBe(initialText);
 });
+
+test('Generation should make use of its prop.generation', () => {
+  const expected = "Generation: 5";
+  const wrapper = shallow(<Generation generation={5} />);
+  expect(wrapper.text()).toBe(expected);
+});
