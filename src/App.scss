@@ -91,11 +91,16 @@ body {
   }
 }
 
+.row {
+  height: 12px;
+}
+
 .cell {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border: 1px solid black;
   display: inline-block;
+  box-sizing: border-box;
 }
 
 .dead {

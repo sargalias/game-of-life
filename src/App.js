@@ -10,6 +10,21 @@ import './App.css';
 
 
 class App extends Component {
+  state = {
+    generation: 0,
+    boardData: []
+  };
+
+  componentDidMount() {
+    console.log('component did mount');
+    console.log(this.state.generation);
+  }
+
+  componentWillUnmount() {
+    console.log('component did unmount');
+    console.log(this.state.generation);
+  }
+
   render() {
     return (
       <Container>
