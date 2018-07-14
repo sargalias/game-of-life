@@ -11,3 +11,11 @@ test('cell with value 1 renders correctly', () => {
   const wrapper = shallow(<Cell value={1} />);
   expect(wrapper).toMatchSnapshot();
 });
+
+test('cell calls onCellClick prop when clicked with correct rowId and colId', () => {
+  const mock = jest.fn();
+  const wrapper = shallow(<Cell rowId={5} colId={3} value={1} onCellClick={mock} />);
+  wrapper.simulate('click');
+  expect(mock).toHaveBeenCalledTimes(1);
+  expect(mock).toHaveBeenLastCalledWith(5, 3);
+});
