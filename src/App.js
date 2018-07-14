@@ -36,7 +36,7 @@ class App extends Component {
     this.setState((prevState) => {
       if (prevState.timer)
         return {};
-      const timer = setInterval(this.update, this.state.interval);
+      const timer = setInterval(this.update, prevState.interval);
       return {
         timer,
         isRunning: true
