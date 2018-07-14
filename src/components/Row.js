@@ -5,7 +5,7 @@ const Row = (props) => (
   <div
     className="row"
   >
-    {props.colData.map((cell, index) => (
+    {props.rowData.map((cell, index) => (
       <Cell key={index} rowId={props.rowId} colId={index} value={cell} />
     ))}
   </div>

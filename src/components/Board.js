@@ -3,8 +3,8 @@ import Row from './Row';
 
 const Board = (props) => (
   <div className="board">
-    {props.boardData.map((row, index) => (
-      <Row key={index} rowId={index} colData={row} />
+    {props.boardData.map((rowData, index) => (
+      <Row key={index} rowId={index} rowData={rowData} />
     ))}
   </div>
 );
