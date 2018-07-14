@@ -5,8 +5,15 @@ exports[`app renders correctly 1`] = `
   <Title
     title="Game Of Life"
   />
-  <Generation />
-  <Buttons />
+  <Generation
+    generation={0}
+  />
+  <Buttons
+    onClearClick={[Function]}
+    onPauseClick={[Function]}
+    onResetClick={[Function]}
+    onRunClick={[Function]}
+  />
   <Board
     boardData={
       Array [

@@ -1,12 +1,12 @@
 import React from 'react'
 import Button from './Button';
 
-const Buttons = () => (
+const Buttons = (props) => (
   <div className="button-container">
-    <Button text="Run" />
-    <Button text="Stop" />
-    <Button text="Clear" />
-    <Button text="Reset" />
+    <Button text="Run" onClick={props.onRunClick} />
+    <Button text="Stop" onClick={props.onPauseClick} />
+    <Button text="Clear" onClick={props.onClearClick} />
+    <Button text="Reset" onClick={props.onResetClick} />
   </div>
 );
 

@@ -5,7 +5,7 @@ import Generation from './components/Generation';
 import Buttons from './components/Buttons';
 import Attribution from './components/Attribution';
 import Board from './components/Board';
-import {generateEmptyBoard, generateRandomBoard} from './logic/generateBoard';
+import {generateRandomBoard} from './logic/generateBoard';
 import rules from './logic/rules';
 
 import './App.css';
@@ -54,7 +54,8 @@ class App extends Component {
   clear = () => {
     this.pause();
     this.setState(() => ({
-      boardData: generateRandomBoard(this.props.rows, this.props.cols, 0)
+      boardData: generateRandomBoard(this.props.rows, this.props.cols, 0),
+      generation: 0
     }));
   };
 
@@ -81,8 +82,8 @@ class App extends Component {
     return (
       <Container>
         <Title title="Game Of Life" />
-        <Generation />
-        <Buttons />
+        <Generation generation={this.state.generation} />
+        <Buttons onRunClick={this.run} onPauseClick={this.pause} onClearClick={this.clear} onResetClick={this.reset} />
         <Board boardData={this.state.boardData} />
         <Attribution
           authorName="Spyros Argalias"

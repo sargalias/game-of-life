@@ -7,8 +7,6 @@ exports[`should render Generation correctly 1`] = `
   Generation: 
   <span
     id="generation-number"
-  >
-    0
-  </span>
+  />
 </div>
 `;

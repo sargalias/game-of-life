@@ -8,7 +8,7 @@ test('should render Generation correctly', () => {
 });
 
 test('Generation should contain correct initial text', () => {
-  const initialText = "Generation: 0";
+  const initialText = "Generation: ";
   const wrapper = shallow(<Generation />);
   expect(wrapper.text()).toBe(initialText);
 });

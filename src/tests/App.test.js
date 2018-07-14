@@ -102,6 +102,7 @@ test('clear works correctly', () => {
     [0, 0, 0],
     [0, 0, 0]
   ]);
+  expect(wrapper.state('generation')).toBe(0);
 });
 
 test('reset works correctly', () => {
@@ -116,4 +117,5 @@ test('reset works correctly', () => {
   wrapper.instance().reset();
   const state = wrapper.state();
   expect(state.boardData).toEqual([[1, 1], [1, 1]]);
+  expect(state.generation).toBe(0);
 });

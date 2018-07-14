@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Generation = () => (
+const Generation = (props) => (
   <div id="generation">
-    Generation: <span id="generation-number">0</span>
+    Generation: <span id="generation-number">{props.generation}</span>
   </div>
 );
 
