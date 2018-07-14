@@ -65,3 +65,18 @@ body {
   #attribution p a {
     text-decoration: none;
     color: coral; }
+
+.cell {
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  display: inline-block; }
+
+.dead {
+  background-color: transparent; }
+
+.alive {
+  background-color: coral; }
+
+.color-secondary {
+  background-color: #cccccc; }

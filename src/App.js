@@ -5,6 +5,8 @@ import Generation from './components/Generation';
 import Buttons from './components/Buttons';
 import Attribution from './components/Attribution';
 
+import Row from './components/Row';
+
 import './App.css';
 
 
@@ -15,6 +17,7 @@ class App extends Component {
         <Title title="Game Of Life" />
         <Generation />
         <Buttons />
+        <Row rowId={7} colData={[0, 0, 1, 1, 0]} />
         <Attribution
           authorName="Spyros Argalias"
           authorUrl="https://sargalias.com"

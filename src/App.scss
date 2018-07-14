@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+$color-primary: #ffffff;
+$color-secondary: #cccccc;
 
 $font-size-md: 1.3rem;
 $size-lg: 1.5rem;
@@ -86,6 +88,24 @@ body {
       text-decoration: none;
       color: $color-primary;
     }
-
   }
+}
+
+.cell {
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.dead {
+  background-color: transparent;
+}
+
+.alive {
+  background-color: $color-primary;
+}
+
+.color-secondary {
+  background-color: $color-secondary;
 }
