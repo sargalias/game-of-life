@@ -1,19 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`app renders correctly 1`] = `
-<Container>
+<div
+  className="container"
+>
   <Title
     title="Game Of Life"
   />
   <Generation
     generation={0}
   />
-  <Buttons
-    onClearClick={[Function]}
-    onPauseClick={[Function]}
-    onResetClick={[Function]}
-    onRunClick={[Function]}
-  />
+  <div
+    className="button-container"
+  >
+    <Button
+      onClick={[Function]}
+      text="Run"
+    />
+    <Button
+      onClick={[Function]}
+      text="Clear"
+    />
+    <Button
+      onClick={[Function]}
+      text="Reset"
+    />
+  </div>
   <Board
     boardData={
       Array [
@@ -1586,5 +1598,5 @@ exports[`app renders correctly 1`] = `
     authorUrl="https://sargalias.com"
     codeRepositoryUrl="https://github.com/sargalias/game-of-life"
   />
-</Container>
+</div>
 `;

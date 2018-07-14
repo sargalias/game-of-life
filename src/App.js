@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Container from './components/Container';
 import Title from './components/Title';
 import Generation from './components/Generation';
-import Buttons from './components/Buttons';
+import Button from './components/Button';
 import Attribution from './components/Attribution';
 import Board from './components/Board';
 import {generateRandomBoard} from './logic/generateBoard';
@@ -90,23 +89,25 @@ class App extends Component {
 
   render() {
     return (
-      <Container>
+      <div className="container">
         <Title title="Game Of Life" />
         <Generation generation={this.state.generation} />
-        <Buttons
-          isRunning={this.state.isRunning}
-          onRunClick={this.run}
-          onPauseClick={this.pause}
-          onClearClick={this.clear}
-          onResetClick={this.reset}
-        />
+        <div className="button-container">
+          { this.state.isRunning ? (
+            <Button text="Pause" onClick={this.pause} />
+          ) : (
+            <Button text="Run" onClick={this.run} />
+          )}
+          <Button text="Clear" onClick={this.clear} />
+          <Button text="Reset" onClick={this.reset} />
+        </div>
         <Board boardData={this.state.boardData} onCellClick={this.handleCellClick} />
         <Attribution
           authorName="Spyros Argalias"
           authorUrl="https://sargalias.com"
           codeRepositoryUrl="https://github.com/sargalias/game-of-life"
         />
-      </Container>
+      </div>
     );
   }
 }
