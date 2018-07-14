@@ -16,7 +16,7 @@ class App extends Component {
     generation: 0,
     boardData: [],
     timer: null,
-    isRunning: this.props.running
+    isRunning: this.props.isRunning
   };
 
   componentDidMount() {
@@ -64,7 +64,7 @@ class App extends Component {
     this.setState(() => ({
       boardData
     }));
-    if (this.props.running)
+    if (this.props.isRunning)
       this.run();
   };
 
