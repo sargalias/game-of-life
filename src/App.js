@@ -79,7 +79,6 @@ class App extends Component {
   }
 
   handleCellClick = (row, col) => {
-    console.log('clicked');
     this.setState((prevState) => {
       const newBoardData = prevState.boardData.map((nestedArr) => nestedArr.slice());
       newBoardData[row][col] = newBoardData[row][col] === 0 ? 1 : 0;
@@ -94,7 +93,13 @@ class App extends Component {
       <Container>
         <Title title="Game Of Life" />
         <Generation generation={this.state.generation} />
-        <Buttons onRunClick={this.run} onPauseClick={this.pause} onClearClick={this.clear} onResetClick={this.reset} />
+        <Buttons
+          isRunning={this.state.isRunning}
+          onRunClick={this.run}
+          onPauseClick={this.pause}
+          onClearClick={this.clear}
+          onResetClick={this.reset}
+        />
         <Board boardData={this.state.boardData} onCellClick={this.handleCellClick} />
         <Attribution
           authorName="Spyros Argalias"

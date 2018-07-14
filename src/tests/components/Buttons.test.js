@@ -7,6 +7,7 @@ test('should render Buttons correctly without props', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+/*
 test('should render Buttons correctly with props', () => {
   const wrapper = shallow(<Buttons
     onRunClick={'a'}
@@ -16,3 +17,27 @@ test('should render Buttons correctly with props', () => {
   />);
   expect(wrapper).toMatchSnapshot();
 });
+*/
+
+test('should render buttons correctly with prop.isRunning=true', () => {
+  const wrapper = shallow(<Buttons
+    onRunClick={'a'}
+    onPauseClick={'b'}
+    onClearClick={'c'}
+    onResetClick={'d'}
+    isRunning={true}
+  />);
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('should render buttons correctly with prop.isRunning=false', () => {
+  const wrapper = shallow(<Buttons
+    onRunClick={'a'}
+    onPauseClick={'b'}
+    onClearClick={'c'}
+    onResetClick={'d'}
+    isRunning={false}
+  />);
+  expect(wrapper).toMatchSnapshot();
+});
+
