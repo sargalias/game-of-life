@@ -15,6 +15,9 @@ $color-primary: coral;
 
 body {
   font-family: 'Raleway', sans-serif;
+  -webkit-font-feature-settings: "lnum";
+  -moz-font-feature-settings: "lnum";
+  font-variant-numeric: normal;
   overflow: hidden;
 }
 
@@ -92,13 +95,16 @@ body {
 }
 
 .board {
+  margin-bottom: $size-lg;
   .row:first-child .cell {
     border-top: 1px solid black;
   }
 }
 
 .row {
-  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   :first-child .cell {
     border-top: 1px solid black;
   }
@@ -107,6 +113,7 @@ body {
 .cell {
   width: 12px;
   height: 12px;
+  flex: 0 1 auto;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
   display: inline-block;
