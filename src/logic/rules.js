@@ -48,3 +48,5 @@ const _applyRules = (oldCell, neighbourCount) => {
   }
   return newCell;
 };
+
+export default gameOfLifeRules;

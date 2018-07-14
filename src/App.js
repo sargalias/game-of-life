@@ -5,7 +5,8 @@ import Generation from './components/Generation';
 import Buttons from './components/Buttons';
 import Attribution from './components/Attribution';
 import Board from './components/Board';
-import { generateRandomBoard } from "./logic/generateBoard";
+import {generateEmptyBoard, generateRandomBoard} from './logic/generateBoard';
+import rules from './logic/rules';
 
 import './App.css';
 
@@ -13,20 +14,67 @@ import './App.css';
 class App extends Component {
   state = {
     generation: 0,
-    boardData: []
+    boardData: [],
+    timer: null,
+    isRunning: this.props.running
   };
 
   componentDidMount() {
-    const boardData = generateRandomBoard(30, 50, 0.3);
-    console.table(boardData);
+    this._initialize();
+  }
+
+  update = () => {
+    const newBoardData = rules(this.state.boardData);
+    this.setState((prevState) => ({
+      boardData: newBoardData,
+      generation: prevState.generation + 1
+    }));
+  };
+
+  run = () => {
+    this.setState((prevState) => {
+      if (prevState.timer)
+        return {};
+      const timer = setInterval(this.update, this.props.interval);
+      return {
+        timer,
+        isRunning: true
+      }
+    });
+  };
+
+  pause = () => {
+    clearInterval(this.state.timer);
+    this.setState(() => ({
+      timer: null,
+      isRunning: false
+    }));
+  };
+
+  clear = () => {
+    this.pause();
+    this.setState(() => ({
+      boardData: generateRandomBoard(this.props.rows, this.props.cols, 0)
+    }));
+  };
+
+  _initialize = () => {
+    const boardData = generateRandomBoard(this.props.rows, this.props.cols, this.props.chance);
     this.setState(() => ({
       boardData
     }));
-  }
+    if (this.props.running)
+      this.run();
+  };
+
+  reset = () => {
+    this.clear();
+    this._initialize();
+  };
 
   componentWillUnmount() {
-    console.log('component did unmount');
-    console.log(this.state.generation);
+    console.log('component will unmount');
+    this.pause();
   }
 
   render() {

@@ -1,4 +1,4 @@
-import {_countNeighbours, gameOfLifeRules} from "../../logic/rules";
+import {_countNeighbours, gameOfLifeRules} from '../../logic/rules';
 
 // Private functions tests
 test('_countNeighbours works correctly with empty board', () => {
