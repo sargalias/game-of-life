@@ -3,11 +3,30 @@ const fs = require('fs');
 
 const patternParser = (inDir, outDir) => {
   // get all files
+  // build the data object
+  // write the thing to file.
+  const allData = {};
   getAllFilenames(inDir)
-    .then(filename => {
+    .then((filenames) => buildData(inDir, filenames))
+    .then((allData) => {return undefined});
+};
 
-    });
-  return null;
+const buildData = (inDir, filenames) => {
+  const allData = {};
+  const allPromises = [];
+  filenames.forEach((filename) => {
+    const filepath = path.join(inDir, filename);
+    const newPromise = (
+      parseFile(filepath)
+        .then((data) => {
+          Object.assign(allData, data);
+        }
+    ));
+    allPromises.push(newPromise);
+  });
+  return Promise.all(allPromises).then(() => {
+    return allData;
+  });
 };
 
 const parseFile = (filepath) => {
@@ -35,7 +54,7 @@ const getAllFilenames = (dir) => {
 
 const parsePattern = (data) => {
   const board = [];
-  let name = 'bob';
+  let name = null;
   const lines = data.trim().split('\n');
   for (let line of lines) {
     line = line.trim();
@@ -81,5 +100,11 @@ const parseBoardFromLine = (line) => {
   return lineArr;
 };
 
-
-module.exports = { patternParser, parsePattern, getAllFilenames, readFile, parsePattern };
+module.exports = {
+  patternParser,
+  parsePattern,
+  getAllFilenames,
+  readFile,
+  parseFile,
+  buildData
+};

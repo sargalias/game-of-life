@@ -4,11 +4,14 @@ const {
   patternParser,
   parsePattern,
   getAllFilenames,
-  readFile
-} = require('../../test/patternParser');
+  readFile,
+  parseFile,
+  buildData
+} = require('../../../scripts/patterns/patternParser');
 
 const inDir = path.join(__dirname, 'patterns_src');
 const outDir = path.join(__dirname, 'patterns_out');
+
 
 test('getAllFilenames works correctly', () => {
   expect.assertions(1);
@@ -97,3 +100,23 @@ test('parsePattern works correctly with normal cell pattern', () => {
   expect(parsePattern(data)).toEqual(expected);
 });
 
+test('parseFile should work correctly', () => {
+  expect.assertions(1);
+  const filename = path.join(inDir, 'simple_105.lif');
+  return parseFile(filename).then((data) => {
+    expect(data).toEqual({'simple': [[1, 0], [0,1]]});
+  });
+});
+
+test('patternParser should work correctly', () => {
+  patternParser(inDir, outDir);
+});
+
+test('buildData should work correctly', () => {
+  expect.assertions(1);
+  return getAllFilenames(inDir)
+    .then((filenames) => buildData(inDir, filenames))
+    .then((allData) => {
+      expect(allData).toMatchSnapshot();
+    });
+});

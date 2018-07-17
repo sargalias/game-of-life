@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`buildData should work correctly 1`] = `
+Object {
+  "34P13": Array [
+    Array [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+    ],
+    Array [
+      0,
+    ],
+    Array [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+    ],
+    Array [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+    ],
+    Array [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+    ],
+    Array [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+    ],
+    Array [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+    ],
+    Array [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+    ],
+    Array [
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+    ],
+    Array [
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1,
+    ],
+    Array [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+    ],
+    Array [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+    ],
+    Array [
+      0,
+    ],
+    Array [
+      0,
+    ],
+    Array [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+    ],
+    Array [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+    ],
+  ],
+  "simple": Array [
+    Array [
+      1,
+      0,
+    ],
+    Array [
+      0,
+      1,
+    ],
+  ],
+  "single_cell": Array [
+    Array [
+      1,
+    ],
+  ],
+}
+`;
+
+exports[`readFile works correctly 1`] = `
+"#Life 1.05
+#D Name: single_cell
+#D The smallest known period 13 oscillator.
+#D www.conwaylife.com/wiki/index.php?title=34P13
+#N
+#P -8 -8
+*
+"
+`;
