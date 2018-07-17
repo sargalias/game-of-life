@@ -11,11 +11,13 @@
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "start": "react-scripts start",
+    "start": "node server/server.js",
+    "dev-server": "react-scripts start",
     "build": "react-scripts build",
     "build-patterns": "node ./scripts/patterns/patternParser.js",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
