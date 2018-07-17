@@ -234,3 +234,4 @@ test('onPatternChange should throw error with invalid pattern name', () => {
   const wrapper = shallow(<App />);
   expect(() => wrapper.instance().onPatternChange(event)).toThrow();
 });
+
