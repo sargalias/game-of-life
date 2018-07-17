@@ -32,7 +32,7 @@ exports[`app renders correctly 1`] = `
   </div>
   <Slider
     onChange={[Function]}
-    value="NaN"
+    value="5"
   />
   <Board
     boardData={
@@ -1601,7 +1601,16 @@ exports[`app renders correctly 1`] = `
     }
     onCellClick={[Function]}
   />
-  <PatternPicker />
+  <PatternPicker
+    onChange={[Function]}
+    patterns={
+      Array [
+        "single_cell",
+        "test",
+      ]
+    }
+    value="single_cell"
+  />
   <Attribution
     authorName="Spyros Argalias"
     authorUrl="https://sargalias.com"

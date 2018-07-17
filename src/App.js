@@ -14,14 +14,25 @@ import './App.css';
 
 
 class App extends Component {
-  state = {
-    generation: 0,
-    boardData: [],
-    timer: null,
-    isRunning: this.props.isRunning,
-    interval: this.props.interval,
-    pattern: 'single_cell'
-  };
+  constructor({ chance=0.3, rows=3, cols=2, isRunning=true, interval=200, ...rest }) {
+    const props = {
+      chance,
+      rows,
+      cols,
+      isRunning,
+      interval,
+      ...rest
+    };
+    super(props);
+    this.state = {
+      generation: 0,
+      boardData: [],
+      timer: null,
+      isRunning: isRunning,
+      interval: interval,
+      pattern: 'single_cell'
+    }
+  }
 
   componentDidMount() {
     this._initialize();
@@ -108,6 +119,15 @@ class App extends Component {
     });
   };
 
+  onPatternChange = (e) => {
+    const pattern = e.target.value;
+    if (patterns[pattern] === undefined)
+      throw ReferenceError('Invalid pattern name');
+    this.setState(() => ({
+      pattern
+    }));
+  };
+
   render() {
     return (
       <div className="container">
@@ -125,7 +145,7 @@ class App extends Component {
         </div>
         <Slider value={`${this.convertIntervalFrequency(this.state.interval)}`} onChange={this.onIntervalChange} />
         <Board boardData={this.state.boardData} onCellClick={this.handleCellClick} />
-        <PatternPicker/>
+        <PatternPicker value={this.state.pattern} onChange={this.onPatternChange} patterns={Object.keys(patterns)} />
         <Attribution
           authorName="Spyros Argalias"
           authorUrl="https://sargalias.com"

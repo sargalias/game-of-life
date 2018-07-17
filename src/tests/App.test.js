@@ -1,7 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from '../App';
+import patterns from '../patterns/patterns';
 
+const patternNames = Object.keys(patterns);
 
 test('app renders correctly', () => {
   const wrapper = shallow(<App
@@ -183,4 +185,39 @@ test('changeInterval should work correctly when running', () => {
   expect(wrapper.state('interval')).toBe(interval);
   expect(wrapper.state('isRunning')).toBe(true);
   expect(wrapper.state('timer')).not.toBe(initialTimer);
+});
+
+test('handlePatternChange should work correctly 1', () => {
+  const pattern = patternNames[0];
+  const event = {
+    target: {
+      value: pattern
+    }
+  };
+  const wrapper = shallow(<App />);
+  wrapper.instance().onPatternChange(event);
+  expect(wrapper.state('pattern')).toBe(pattern);
+});
+
+test('handlePatternChange should work correctly 2', () => {
+  const pattern = patternNames[1];
+  const event = {
+    target: {
+      value: pattern
+    }
+  };
+  const wrapper = shallow(<App />);
+  wrapper.instance().onPatternChange(event);
+  expect(wrapper.state('pattern')).toBe(pattern);
+});
+
+test('handlePatternChange should throw error with invalid pattern name', () => {
+  const pattern = 'invalid pattern name';
+  const event = {
+    target: {
+      value: pattern
+    }
+  };
+  const wrapper = shallow(<App />);
+  expect(() => wrapper.instance().onPatternChange(event)).toThrow();
 });
