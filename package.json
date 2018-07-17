@@ -13,6 +13,7 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build-patterns": "node ./scripts/patterns/patternParser.js",
     "test": "cross-env CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

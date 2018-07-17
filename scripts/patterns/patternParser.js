@@ -1,6 +1,9 @@
 const path = require('path');
 const fs = require('fs');
 
+const INDIR = path.join(__dirname, 'patterns_src');
+const OUTPATH = path.join(__dirname, '..', '..', 'src', 'patterns', 'patterns.js');
+
 const patternParser = (inDir, outPath) => {
   // get all files
   // build the data object
@@ -122,3 +125,8 @@ module.exports = {
   _buildData,
   _writeData
 };
+
+
+if (require.main === module) {
+  patternParser(INDIR, OUTPATH);
+}
