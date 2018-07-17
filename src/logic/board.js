@@ -16,3 +16,15 @@ export const generateEmptyBoard = (rows, cols) => {
     board.push(new Array(cols));
   return board;
 };
+
+export const copyBoard = (board) => {
+  const newBoard = [];
+  for (let x of board) {
+    const arr = [];
+    for (let y of x) {
+      arr.push(y);
+    }
+    newBoard.push(arr);
+  }
+  return newBoard;
+};

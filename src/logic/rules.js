@@ -1,4 +1,4 @@
-import { generateEmptyBoard } from "./generateBoard";
+import { generateEmptyBoard } from "./board";
 
 export const gameOfLifeRules = (board) => {
   const rows = board.length;

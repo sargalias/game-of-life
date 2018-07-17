@@ -4,9 +4,10 @@ import Generation from './components/Generation';
 import Button from './components/Button';
 import Attribution from './components/Attribution';
 import Board from './components/Board';
-import {generateRandomBoard} from './logic/generateBoard';
+import {generateRandomBoard} from './logic/board';
 import rules from './logic/rules';
 import Slider from './components/Slider';
+import PatternPicker from './components/PatternPicker';
 
 import './App.css';
 
@@ -122,6 +123,7 @@ class App extends Component {
         </div>
         <Slider value={`${this.convertIntervalFrequency(this.state.interval)}`} onChange={this.onIntervalChange} />
         <Board boardData={this.state.boardData} onCellClick={this.handleCellClick} />
+        <PatternPicker/>
         <Attribution
           authorName="Spyros Argalias"
           authorUrl="https://sargalias.com"
