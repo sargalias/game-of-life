@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import App from '../App';
 import patterns from '../patterns/patterns';
+import {applyPattern} from "../logic/patterns";
 
 const patternNames = Object.keys(patterns);
 
@@ -135,26 +136,38 @@ test('reset works correctly', () => {
   expect(state.generation).toBe(0);
 });
 
-test('handleCellClick works correctly 1', () => {
-  const wrapper = shallow(<App chance={1} rows={3} cols={2} isRunning={false}/>);
-  wrapper.instance().handleCellClick(0, 0);
-  wrapper.instance().handleCellClick(1, 1);
-  expect(wrapper.state('boardData')).toEqual([
-    [0, 1],
-    [1, 0],
-    [1, 1]
-  ]);
+test('onCellClick works correctly 1', () => {
+  const wrapper = shallow(<App chance={0} rows={3} cols={2} isRunning={false}/>);
+  const boardData = wrapper.state('boardData');
+  const patternName = Object.keys(patterns)[0];
+  const pattern = patterns[patternName];
+  const row = 0;
+  const col = 0;
+  const expected = applyPattern(boardData, pattern, row, col);
+
+  // Set pattern on wrapper.
+  wrapper.setState({pattern: patternName});
+  // run handleCell click;
+  wrapper.instance().onCellClick(row, col);
+  // Check correct boardData state.
+  expect(wrapper.state('boardData')).toEqual(expected);
 });
 
-test('handleCellClick works correctly 2', () => {
-  const wrapper = shallow(<App chance={0} rows={3} cols={2} isRunning={false} />);
-  wrapper.instance().handleCellClick(0, 0);
-  wrapper.instance().handleCellClick(1, 1);
-  expect(wrapper.state('boardData')).toEqual([
-    [1, 0],
-    [0, 1],
-    [0, 0]
-  ]);
+test('onCellClick works correctly 2', () => {
+  const wrapper = shallow(<App chance={0} rows={3} cols={2} isRunning={false}/>);
+  const boardData = wrapper.state('boardData');
+  const patternName = Object.keys(patterns)[1];
+  const pattern = patterns[patternName];
+  const row = 0;
+  const col = 0;
+  const expected = applyPattern(boardData, pattern, row, col);
+
+  // Set pattern on wrapper.
+  wrapper.setState({pattern: patternName});
+  // run handleCell click;
+  wrapper.instance().onCellClick(row, col);
+  // Check correct boardData state.
+  expect(wrapper.state('boardData')).toEqual(expected);
 });
 
 test('changeInterval should work correctly when not running', () => {
@@ -187,7 +200,7 @@ test('changeInterval should work correctly when running', () => {
   expect(wrapper.state('timer')).not.toBe(initialTimer);
 });
 
-test('handlePatternChange should work correctly 1', () => {
+test('onPatternChange should work correctly 1', () => {
   const pattern = patternNames[0];
   const event = {
     target: {
@@ -199,7 +212,7 @@ test('handlePatternChange should work correctly 1', () => {
   expect(wrapper.state('pattern')).toBe(pattern);
 });
 
-test('handlePatternChange should work correctly 2', () => {
+test('onPatternChange should work correctly 2', () => {
   const pattern = patternNames[1];
   const event = {
     target: {
@@ -211,7 +224,7 @@ test('handlePatternChange should work correctly 2', () => {
   expect(wrapper.state('pattern')).toBe(pattern);
 });
 
-test('handlePatternChange should throw error with invalid pattern name', () => {
+test('onPatternChange should throw error with invalid pattern name', () => {
   const pattern = 'invalid pattern name';
   const event = {
     target: {

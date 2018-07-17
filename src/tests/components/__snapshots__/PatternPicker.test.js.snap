@@ -4,9 +4,16 @@ exports[`PatternPicker should correctly use its props.patterns 1`] = `
 <div
   className="pattern-picker-container"
 >
+  <div>
+    <label
+      htmlFor="pattern"
+    >
+      Pattern:
+    </label>
+  </div>
   <select
-    id=""
-    name=""
+    id="pattern"
+    name="pattern"
   >
     <option
       key="single_cell"
@@ -34,9 +41,16 @@ exports[`PatternPicker should render correctly 1`] = `
 <div
   className="pattern-picker-container"
 >
+  <div>
+    <label
+      htmlFor="pattern"
+    >
+      Pattern:
+    </label>
+  </div>
   <select
-    id=""
-    name=""
+    id="pattern"
+    name="pattern"
   />
 </div>
 `;

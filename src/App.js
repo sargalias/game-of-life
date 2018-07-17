@@ -8,6 +8,8 @@ import {generateRandomBoard} from './logic/board';
 import rules from './logic/rules';
 import Slider from './components/Slider';
 import PatternPicker from './components/PatternPicker';
+
+import { applyPattern } from "./logic/patterns";
 import patterns from './patterns/patterns';
 
 import './App.css';
@@ -105,14 +107,12 @@ class App extends Component {
   };
 
   componentWillUnmount() {
-    console.log('component will unmount');
     this.pause();
   }
 
-  handleCellClick = (row, col) => {
+  onCellClick = (row, col) => {
     this.setState((prevState) => {
-      const newBoardData = prevState.boardData.map((nestedArr) => nestedArr.slice());
-      newBoardData[row][col] = newBoardData[row][col] === 0 ? 1 : 0;
+      const newBoardData = applyPattern(prevState.boardData, patterns[prevState.pattern], row, col);
       return {
         boardData: newBoardData
       };
@@ -144,7 +144,7 @@ class App extends Component {
           <Button text="Reset" onClick={this.reset} />
         </div>
         <Slider value={`${this.convertIntervalFrequency(this.state.interval)}`} onChange={this.onIntervalChange} />
-        <Board boardData={this.state.boardData} onCellClick={this.handleCellClick} />
+        <Board boardData={this.state.boardData} onCellClick={this.onCellClick} />
         <PatternPicker value={this.state.pattern} onChange={this.onPatternChange} patterns={Object.keys(patterns)} />
         <Attribution
           authorName="Spyros Argalias"

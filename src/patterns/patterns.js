@@ -1,7 +1,7 @@
 
 const patterns = {
   'single_cell': [
-    [0]
+    [1]
   ],
   'test': [
     [1, 0],
