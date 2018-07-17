@@ -8,6 +8,7 @@ import {generateRandomBoard} from './logic/board';
 import rules from './logic/rules';
 import Slider from './components/Slider';
 import PatternPicker from './components/PatternPicker';
+import patterns from './patterns/patterns';
 
 import './App.css';
 
@@ -18,7 +19,8 @@ class App extends Component {
     boardData: [],
     timer: null,
     isRunning: this.props.isRunning,
-    interval: this.props.interval
+    interval: this.props.interval,
+    pattern: 'single_cell'
   };
 
   componentDidMount() {

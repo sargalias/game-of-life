@@ -24,8 +24,3 @@ const handleVal = (newBoard, board, pattern, xBoard, yBoard, xPattern, yPattern)
     }
   }
 };
-
-export const getPattern = (filepath) => {
-  // requires absolut path?
-  const patternArr = [];
-};

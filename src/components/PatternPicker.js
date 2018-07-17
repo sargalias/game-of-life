@@ -1,10 +1,11 @@
 import React from 'react';
 
-const PatternPicker = (props) => (
-  <select name="" id="">
-    <option value="single cell">Single Cell</option>
-    <option value="single cell 2">Single Cell 2</option>
-  </select>
+const PatternPicker = ({patterns=[], onChange}) => (
+  <div className="pattern-picker-container">
+    <select name="" id="" onChange={onChange}>
+      {patterns.map((pattern) => <option value={pattern} key={pattern}>{pattern}</option>)}
+    </select>
+  </div>
 );
 
 export default PatternPicker;

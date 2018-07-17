@@ -2,10 +2,6 @@ import { getPattern, applyPattern } from "../../logic/patterns";
 import path from 'path';
 import boards from '../fixtures/boards';
 
-const patternPath = path.join(__dirname, '..', 'patterns');
-const simplePattern = path.join(patternPath, 'simple-pattern_106.lif.txt');
-const normalPattern = path.join(patternPath, '34p13_106.lif.txt');
-
 
 test('applyPattern returns new board', () => {
   const emptyBoard = boards['empty'];

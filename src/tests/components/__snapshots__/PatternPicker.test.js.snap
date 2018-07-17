@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PatternPicker should correctly use its props.patterns 1`] = `
+<div
+  className="pattern-picker-container"
+>
+  <select
+    id=""
+    name=""
+  >
+    <option
+      key="single_cell"
+      value="single_cell"
+    >
+      single_cell
+    </option>
+    <option
+      key="test"
+      value="test"
+    >
+      test
+    </option>
+    <option
+      key="test2"
+      value="test2"
+    >
+      test2
+    </option>
+  </select>
+</div>
+`;
+
+exports[`PatternPicker should render correctly 1`] = `
+<div
+  className="pattern-picker-container"
+>
+  <select
+    id=""
+    name=""
+  />
+</div>
+`;
