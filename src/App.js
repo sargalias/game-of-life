@@ -32,7 +32,7 @@ class App extends Component {
       timer: null,
       isRunning: isRunning,
       interval: interval,
-      pattern: 'single_cell'
+      pattern: 'Single Cell'
     }
   }
 

@@ -57,6 +57,11 @@ test('app state.interval is correct upon mounting', () => {
   expect(wrapper.state('interval')).toBe(50);
 });
 
+test('app initial state.pattern exists in patterns', () => {
+  const wrapper = shallow(<App />);
+  expect(patterns[wrapper.state('pattern')]).toBeTruthy();
+});
+
 test('update works correctly', () => {
   const rows = 5;
   const cols = 3;

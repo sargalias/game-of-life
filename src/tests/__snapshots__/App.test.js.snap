@@ -1605,11 +1605,11 @@ exports[`app renders correctly 1`] = `
     onChange={[Function]}
     patterns={
       Array [
-        "single_cell",
-        "test",
+        "34P13",
+        "Single Cell",
       ]
     }
-    value="single_cell"
+    value="Single Cell"
   />
   <Attribution
     authorName="Spyros Argalias"
