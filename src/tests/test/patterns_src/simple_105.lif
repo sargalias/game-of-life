@@ -1,7 +1,8 @@
 #Life 1.05
-#D Name: single_cell
+#D Name: simple
 #D The smallest known period 13 oscillator.
 #D www.conwaylife.com/wiki/index.php?title=34P13
 #N
 #P -8 -8
-*
+*.
+.*
