@@ -39,32 +39,46 @@ const parsePattern = (data) => {
   const lines = data.trim().split('\n');
   for (let line of lines) {
     line = line.trim();
-    if (line.startsWith('#')) {
-      if (line.includes('Name')) {
-        name = parseName(line);
-        let match = line.match(/Name:\s+(.*)/);
-        if (match) {
-          name = match[1];
-        }
-      }
-    }
-    else {
-      const lineArr = [];
-      for (let symbol of line) {
-        if (symbol === '.') {
-          lineArr.push(0);
-        } else {
-          lineArr.push(1);
-        }
-      }
+    let [newName, lineArr] = parseLine(line);
+    name = newName || name;
+    if (lineArr.length !== 0)
       board.push(lineArr);
-    }
   }
   return {[name]: board};
 };
 
-const parseName = (line) => {
+const parseLine = (line) => {
+  line = line.trim();
+  let name = null;
+  let lineArr = [];
+  if (line.startsWith('#')) {
+    name = matchName(line);
+  }
+  else {
+    lineArr = parseBoardFromLine(line);
+  }
+  return [name, lineArr];
+};
 
+const matchName = (line) => {
+  let name = null;
+  let match = line.match(/Name:\s+(.*)/);
+  if (match) {
+    name = match[1];
+  }
+  return name;
+};
+
+const parseBoardFromLine = (line) => {
+  const lineArr = [];
+  for (let symbol of line) {
+    if (symbol === '.') {
+      lineArr.push(0);
+    } else {
+      lineArr.push(1);
+    }
+  }
+  return lineArr;
 };
 
 
