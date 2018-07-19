@@ -4,6 +4,7 @@ exports[`cell with value 0 renders correctly 1`] = `
 <div
   className="cell dead"
   onClick={[Function]}
+  style={Object {}}
 />
 `;
 
@@ -11,5 +12,10 @@ exports[`cell with value 1 renders correctly 1`] = `
 <div
   className="cell alive"
   onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": undefined,
+    }
+  }
 />
 `;

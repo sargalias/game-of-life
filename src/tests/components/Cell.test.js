@@ -19,3 +19,9 @@ test('cell calls onCellClick prop when clicked with correct rowId and colId', ()
   expect(mock).toHaveBeenCalledTimes(1);
   expect(mock).toHaveBeenLastCalledWith(5, 3);
 });
+
+test('cell should render with provided background color if alive', () => {
+  const wrapper = shallow(<Cell value={1} bgColor={'blue'} />);
+  const html = wrapper.render();
+  expect(html.attr('style')).toBe('background-color:blue');
+});
