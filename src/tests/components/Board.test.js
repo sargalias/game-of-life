@@ -45,15 +45,6 @@ test('board should not initialise with a color array in state if props.hasColor=
   expect(wrapper.state('colors')).toBeFalsy();
 });
 
-test('board color array should have length of boardData row width', () => {
-  const boardData = [
-    [0, 0, 0],
-    [1, 0, 1]
-  ];
-  const wrapper = shallow(<Board hasColor={true} boardData={boardData} />);
-  expect(wrapper.state('colors').length).toBe(3);
-});
-
 test('board should generate correct 2D color array', () => {
   const boardData = [
     [0, 0, 0, 10, 20, 50],

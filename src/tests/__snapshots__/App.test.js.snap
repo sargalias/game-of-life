@@ -1599,6 +1599,7 @@ exports[`app renders correctly 1`] = `
         ],
       ]
     }
+    generation={0}
     hasColor={true}
     onCellClick={[Function]}
   />
