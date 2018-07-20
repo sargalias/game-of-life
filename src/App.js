@@ -144,7 +144,10 @@ class App extends Component {
           <Button text="Reset" onClick={this.reset} />
         </div>
         <Slider value={`${this.convertIntervalFrequency(this.state.interval)}`} onChange={this.onIntervalChange} />
-        <Board boardData={this.state.boardData} onCellClick={this.onCellClick} />
+        <Board
+          boardData={this.state.boardData}
+          onCellClick={this.onCellClick}
+        />
         <PatternPicker value={this.state.pattern} onChange={this.onPatternChange} patterns={Object.keys(patterns)} />
         <Attribution
           authorName="Spyros Argalias"

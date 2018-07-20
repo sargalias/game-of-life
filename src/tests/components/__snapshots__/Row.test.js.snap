@@ -34,3 +34,42 @@ exports[`row should render correctly 1`] = `
   />
 </div>
 `;
+
+exports[`row should render correctly with rowColorData 1`] = `
+<div
+  className="row"
+>
+  <Cell
+    bgColor="white"
+    colId={0}
+    key="0"
+    onCellClick={[Function]}
+    rowId={5}
+    value={0}
+  />
+  <Cell
+    bgColor="yellow"
+    colId={1}
+    key="1"
+    onCellClick={[Function]}
+    rowId={5}
+    value={0}
+  />
+  <Cell
+    bgColor="red"
+    colId={2}
+    key="2"
+    onCellClick={[Function]}
+    rowId={5}
+    value={1}
+  />
+  <Cell
+    bgColor="orange"
+    colId={3}
+    key="3"
+    onCellClick={[Function]}
+    rowId={5}
+    value={1}
+  />
+</div>
+`;

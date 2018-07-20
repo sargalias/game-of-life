@@ -11,6 +11,7 @@ const Row = (props) => (
         rowId={props.rowId}
         colId={index}
         value={cell}
+        bgColor={props.rowColorData && props.rowColorData[index]}
         onCellClick={props.onCellClick}
       />
     ))}

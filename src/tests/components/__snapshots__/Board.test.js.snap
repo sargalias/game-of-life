@@ -1,5 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`board should generate correct 2D color array 1`] = `
+Array [
+  Array [
+    "hsl(0, 1, 1)",
+    "hsl(60, 1, 1)",
+    "hsl(120, 1, 1)",
+    "hsl(180, 1, 1)",
+    "hsl(240, 1, 1)",
+    "hsl(300, 1, 1)",
+  ],
+  Array [
+    "hsl(60, 1, 1)",
+    "hsl(120, 1, 1)",
+    "hsl(180, 1, 1)",
+    "hsl(240, 1, 1)",
+    "hsl(300, 1, 1)",
+    "hsl(0, 1, 1)",
+  ],
+  Array [
+    "hsl(120, 1, 1)",
+    "hsl(180, 1, 1)",
+    "hsl(240, 1, 1)",
+    "hsl(300, 1, 1)",
+    "hsl(0, 1, 1)",
+    "hsl(60, 1, 1)",
+  ],
+  Array [
+    "hsl(180, 1, 1)",
+    "hsl(240, 1, 1)",
+    "hsl(300, 1, 1)",
+    "hsl(0, 1, 1)",
+    "hsl(60, 1, 1)",
+    "hsl(120, 1, 1)",
+  ],
+]
+`;
+
 exports[`board should render correctly with boardData 1`] = `
 <div
   className="board"
