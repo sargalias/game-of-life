@@ -46,6 +46,49 @@ exports[`board should render correctly with boardData 1`] = `
     onCellClick={[Function]}
     rowData={
       Array [
+        1,
+        0,
+        1,
+      ]
+    }
+    rowId={0}
+  />
+  <Row
+    key="1"
+    onCellClick={[Function]}
+    rowData={
+      Array [
+        0,
+        1,
+        0,
+      ]
+    }
+    rowId={1}
+  />
+  <Row
+    key="2"
+    onCellClick={[Function]}
+    rowData={
+      Array [
+        1,
+        0,
+        1,
+      ]
+    }
+    rowId={2}
+  />
+</div>
+`;
+
+exports[`board should render correctly with boardData and hasColor=true 1`] = `
+<div
+  className="board"
+>
+  <Row
+    key="0"
+    onCellClick={[Function]}
+    rowData={
+      Array [
         0,
         0,
         0,

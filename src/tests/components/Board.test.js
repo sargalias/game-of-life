@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Board from '../../components/Board';
+import boards from '../fixtures/boards';
 
 test('board should render correctly with empty boardData', () => {
   const boardData = [];
@@ -9,6 +10,12 @@ test('board should render correctly with empty boardData', () => {
 });
 
 test('board should render correctly with boardData', () => {
+  const boardData = boards[1];
+  const wrapper = shallow(<Board boardData={boardData} onCellClick={() => {}} />);
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('board should render correctly with boardData and hasColor=true', () => {
   const boardData = [
     [0, 0, 0],
     [1, 0, 1],

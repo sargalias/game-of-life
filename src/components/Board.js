@@ -7,9 +7,9 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    const {hasColor, width} = props;
+    const {hasColor} = props;
     if (hasColor) {
-      this.state.colors = generateGradient(width*2);
+      this.state.colors = generateGradient();
     }
   }
 
