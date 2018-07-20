@@ -7,10 +7,9 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    const {hasColor, boardData} = props;
+    const {hasColor, width} = props;
     if (hasColor) {
-      const columns = boardData.length === 0 ? 0 : boardData[0].length;
-      this.state.colors = generateGradient(columns);
+      this.state.colors = generateGradient(width*2);
     }
   }
 
@@ -30,7 +29,7 @@ class Board extends React.Component {
   };
 
   render() {
-    let colorBoard = this.props.colors ? this._gen2DColorArray() : undefined;
+    let colorBoard = this.props.hasColor ? this._gen2DColorArray() : undefined;
     return (
       <div className="board">
         {this.props.boardData.map((rowData, index) => (

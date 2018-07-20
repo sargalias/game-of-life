@@ -147,6 +147,9 @@ class App extends Component {
         <Board
           boardData={this.state.boardData}
           onCellClick={this.onCellClick}
+          hasColor={true}
+          width={this.props.rows}
+          generation={this.state.generation}
         />
         <PatternPicker value={this.state.pattern} onChange={this.onPatternChange} patterns={Object.keys(patterns)} />
         <Attribution

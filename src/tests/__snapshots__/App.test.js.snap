@@ -1599,7 +1599,9 @@ exports[`app renders correctly 1`] = `
         ],
       ]
     }
+    hasColor={true}
     onCellClick={[Function]}
+    width={30}
   />
   <PatternPicker
     onChange={[Function]}

@@ -1,5 +1,5 @@
 
-const generateGradient = (steps=360, saturation=1, value=1) => {
+const generateGradient = (steps=360, saturation=100, value=50) => {
   const gradient = [];
   for (let i=0; i<steps; i++) {
     const hue = _calculateHue(i, steps);
@@ -15,7 +15,7 @@ const _calculateHue = (step, totalSteps) => {
 };
 
 const _createColorStr = (hue, saturation, value) => {
-  return `hsl(${hue}, ${saturation}, ${value})`;
+  return `hsl(${hue}, ${saturation}%, ${value}%)`;
 };
 
 export default generateGradient;
