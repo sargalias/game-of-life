@@ -11,6 +11,9 @@ exports[`PatternPicker should correctly use its props.patterns 1`] = `
     >
       Pattern:
     </label>
+    <p>
+      (Click a cell on the board to add / remove pattern.)
+    </p>
   </div>
   <select
     id="pattern"
@@ -49,6 +52,9 @@ exports[`PatternPicker should render correctly 1`] = `
     >
       Pattern:
     </label>
+    <p>
+      (Click a cell on the board to add / remove pattern.)
+    </p>
   </div>
   <select
     id="pattern"
