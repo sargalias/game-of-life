@@ -3,29 +3,29 @@ A game of life simulation with a color effect, buttons with different effects an
 
 
 Tech stack:
-	React
-	Node.js and Express (for a very basic server).
-	Jest & enzyme (testing)
-	Sass
+React
+Node.js and Express (for a very basic server).
+Jest & enzyme (testing)
+Sass
 
 
 Features:
-	Every cell in a row has a different color which keeps changing.
-	Run / pause button for stopping the simulation.
-	Step button for advancing the simulation by a single step.
-	Clear button to clear all cells.
-	Reset button to restart the simulation with cells.
-	Speed slider which sets the rate of cycles.
-	Select dropdown which selects pattern to add to board when a cell is clicked.
-	Clicking on the board adds / removes cells to the board based on the selected pattern. If a cell already exists, it is removed, otherwise it is added.
+Every cell in a row has a different color which keeps changing.
+Run / pause button for stopping the simulation.
+Step button for advancing the simulation by a single step.
+Clear button to clear all cells.
+Reset button to restart the simulation with cells.
+Speed slider which sets the rate of cycles.
+Select dropdown which selects pattern to add to board when a cell is clicked.
+Clicking on the board adds / removes cells to the board based on the selected pattern. If a cell already exists, it is removed, otherwise it is added.
 
 
 Implementation:
-	2D array for the state of the board.
-	React for the front-end.
-	create-react-app to set up the project.
-	App.js holds the program logic.
-	Separate modules created for different logic, such as generating the initial board and applying the game of life rules to the board.
-	Testing with Jest and enzyme.
-	SCSS used along with a build script to process it to CSS.
-	Node.js and Express for a very basic server (needed to upload to Heroku).
+2D array for the state of the board.
+React for the front-end.
+create-react-app to set up the project.
+App.js holds the program logic.
+Separate modules created for different logic, such as generating the initial board and applying the game of life rules to the board.
+Testing with Jest and enzyme.
+SCSS used along with a build script to process it to CSS.
+Node.js and Express for a very basic server (needed to upload to Heroku).
