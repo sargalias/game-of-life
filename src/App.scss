@@ -150,6 +150,14 @@ body {
   margin-bottom: $size-lg;
 }
 
+.pattern-picker-text {
+  font-size: $font-size-md;
+}
+
+#pattern {
+  font-family: 'Lato', sans-serif;
+}
+
 input[type=range] {
   width: 100px;
   margin-left: $size-md;

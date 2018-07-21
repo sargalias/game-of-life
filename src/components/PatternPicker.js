@@ -3,7 +3,7 @@ import React from 'react';
 const PatternPicker = ({patterns=[], onChange, value}) => (
   <div className="pattern-picker-container">
     <div>
-      <label htmlFor="pattern">Pattern:</label>
+      <label htmlFor="pattern" className="pattern-picker-text">Pattern:</label>
     </div>
     <select name="pattern" id="pattern" onChange={onChange} value={value}>
       {patterns.map((pattern) => (

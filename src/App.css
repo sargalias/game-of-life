@@ -183,6 +183,12 @@ body {
 .pattern-picker-container {
   margin-bottom: 1.5rem; }
 
+.pattern-picker-text {
+  font-size: 1.3rem; }
+
+#pattern {
+  font-family: 'Lato', sans-serif; }
+
 input[type=range] {
   width: 100px;
   margin-left: 1rem;
