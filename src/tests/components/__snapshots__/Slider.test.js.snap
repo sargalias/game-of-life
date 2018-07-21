@@ -6,20 +6,29 @@ exports[`Slider should render correctly 1`] = `
 >
   <div>
     <label
+      className="slider__title"
       htmlFor="speed"
     >
-      Step speed
+      Speed
     </label>
   </div>
   <div>
-    Min
+    <span
+      className="slider__text"
+    >
+      Min
+    </span>
     <input
       max="50"
       min="2"
       name="speed"
       type="range"
     />
-    Max
+    <span
+      className="slider__text"
+    >
+      Max
+    </span>
   </div>
 </div>
 `;

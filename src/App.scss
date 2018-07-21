@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
+@import './input-range.scss';
+
 
 $color-primary: coral;
 $color-secondary: #cccccc;
@@ -131,6 +133,25 @@ body {
   margin-bottom: $size-lg;
 }
 
+.slider__title {
+  font-size: $font-size-md;
+}
+
+.slider__text {
+  //border: 1px solid black;
+  //padding: $size-sm / 2;
+  //border-radius: $size-sm;
+  //background-color: $color-primary;
+  //color: white;
+  font-size: $font-size-md * 0.8;
+}
+
 .pattern-picker-container {
   margin-bottom: $size-lg;
+}
+
+input[type=range] {
+  width: 100px;
+  margin-left: $size-md;
+  margin-right: $size-md;
 }

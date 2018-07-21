@@ -12,6 +12,7 @@ import PatternPicker from './components/PatternPicker';
 import { applyPattern } from "./logic/patterns";
 import patterns from './patterns/patterns';
 
+import 'input-range-scss/_inputrange.scss';
 import './App.css';
 
 

@@ -3,10 +3,12 @@ import React from 'react';
 const Slider = ({value, onChange}) => (
   <div className="slider" >
     <div>
-      <label htmlFor="speed">Step speed</label>
+      <label htmlFor="speed" className="slider__title">Speed</label>
     </div>
     <div>
-      Min
+      <span className="slider__text">
+        Min
+      </span>
       <input
         name="speed"
         type="range"
@@ -15,7 +17,9 @@ const Slider = ({value, onChange}) => (
         value={value}
         onChange={onChange}
       />
-      Max
+      <span className="slider__text">
+        Max
+      </span>
     </div>
   </div>
 );
