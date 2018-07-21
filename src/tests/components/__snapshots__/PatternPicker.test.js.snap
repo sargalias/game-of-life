@@ -6,6 +6,7 @@ exports[`PatternPicker should correctly use its props.patterns 1`] = `
 >
   <div>
     <label
+      className="pattern-picker-text"
       htmlFor="pattern"
     >
       Pattern:
@@ -43,6 +44,7 @@ exports[`PatternPicker should render correctly 1`] = `
 >
   <div>
     <label
+      className="pattern-picker-text"
       htmlFor="pattern"
     >
       Pattern:

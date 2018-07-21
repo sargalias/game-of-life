@@ -187,7 +187,12 @@ body {
   font-size: 1.3rem; }
 
 #pattern {
+  margin-top: 0.5rem;
   font-family: 'Lato', sans-serif; }
+
+select {
+  border-radius: 0.2rem;
+  font-size: 1.04rem; }
 
 input[type=range] {
   width: 100px;

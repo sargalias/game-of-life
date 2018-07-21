@@ -155,7 +155,14 @@ body {
 }
 
 #pattern {
+  margin-top: $size-sm;
   font-family: 'Lato', sans-serif;
+}
+
+select {
+  border-radius: 0.2rem;
+  //padding: $size-sm / 2;
+  font-size: $font-size-md * 0.8;
 }
 
 input[type=range] {
